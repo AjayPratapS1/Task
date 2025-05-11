@@ -11,7 +11,7 @@ const port = process.env.PORT || 4000;
 //MIDDLEWARES
 app.use(
   cors({
-    origin: "https://task-two-drab.vercel.app/",
+    origin: "https://task-two-drab.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
