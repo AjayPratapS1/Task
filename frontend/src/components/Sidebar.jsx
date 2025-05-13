@@ -9,13 +9,13 @@ import {
 import { Lightbulb, Menu, Sparkles, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-const Sidebar = (user, tasks) => {
+const Sidebar = ({user, tasks}) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const totalTasks = tasks?.length || 0;
   const completedTasks = tasks?.filter((t) => t.completed)?.length || 0;
   const productivity =
-    totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+  totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
   const username = user?.name || "User";
   const initial = username.charAt(0).toUpperCase();
   useEffect(() => {
@@ -89,7 +89,7 @@ const Sidebar = (user, tasks) => {
             </div>
           </div>
           {renderMenuItems()}
-          <div className="mt-auto pt-6 lg:block hidden">
+          <div className={`"mt-auto pt-6 lg:block hidden" ${TIP_CARD.container}`}>
             <div className={TIP_CARD.iconWrapper}>
               <Lightbulb className="w-5 h-5 text-purple-600" />
             </div>

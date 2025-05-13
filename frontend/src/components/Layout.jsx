@@ -24,14 +24,14 @@ const Layout = ({ onLogout, user }) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      const arr = Array.isArray(data)
-        ? data
-        : Array.isArray(data?.tasks)
-        ? data.tasks
-        : Array.isArray(data?.data)
-        ? data.data
-        : [];
-      setTasks(arr);
+      // const arr = Array.isArray(data)
+      //   ? data
+      //   : Array.isArray(data?.tasks)
+      //   ? data.tasks
+      //   : Array.isArray(data?.data)
+      //   ? data.data
+      //   : [];
+      setTasks(data.tasks);
     } catch (error) {
       console.error(error);
       setError(error.message || "An error occurred while fetching tasks");

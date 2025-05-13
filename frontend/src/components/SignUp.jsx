@@ -28,7 +28,7 @@ const SignUp = ({ onSwitchMode }) => {
         `${API_BASE}/user/register`,
         formData
       );
-      console.log("SignUp Successfully", data);
+      // console.log("SignUp Successfully", data);
       setMessage({ text: "SignUp Successfully", type: "success" });
       setFormData(INITIAL_FORM);
     } catch (error) {

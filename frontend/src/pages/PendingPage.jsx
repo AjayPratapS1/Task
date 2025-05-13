@@ -132,6 +132,7 @@ const PendingPage = () => {
           setSelectedTask(null);
           refreshTasks();
         }}
+        setShowModal={setShowModal}
         taskToEdit={seletedTask}
       />
     </div>

@@ -234,6 +234,7 @@ const Dashboard = () => {
           setShowModel(false);
           setSelectedTask(null);
         }}
+        setShowModal={setShowModel}
         taskToEdit={selectedTask}
         onSave={handleTaskSave}
       />

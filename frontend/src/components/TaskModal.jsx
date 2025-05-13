@@ -14,7 +14,7 @@ import {
   X,
 } from "lucide-react";
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
-const TaskModal = ({ isOpen, onClose, taskToEdit, onSave, onLogout }) => {
+const TaskModal = ({ isOpen, onClose, taskToEdit, onSave, onLogout,setShowModal }) => {
   const [taskData, setTaskData] = useState(DEFAULT_TASK);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -83,7 +83,7 @@ const TaskModal = ({ isOpen, onClose, taskToEdit, onSave, onLogout }) => {
         onSave?.(saved);
         onClose();
       } catch (err) {
-        console.log(err);
+        // console.log(err);
         setError(err.message || "Unable to create task");
       } finally {
         setLoading(false);
@@ -115,7 +115,7 @@ const TaskModal = ({ isOpen, onClose, taskToEdit, onSave, onLogout }) => {
             className="text-gray-500 p-2 hover:text-purple-700 transition-colors duration-200 hover:bg-purple-100 rounded-lg
                 "
           ></button>
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5" onClick={()=>setShowModal(false)} />
         </div>
         {/* FORM TO FILL TO CREATE A TASK */}
         <form onSubmit={handleSubmit} className="space-y-4">
